@@ -17,7 +17,7 @@ def send(num,d,message):
     d.get(
         f'https://web.whatsapp.com/send?phone={num}&text={message}')
     d.implicitly_wait(3)
-    time.sleep(20)
+    time.sleep(10)
     try:
         d.switch_to_alert().accept()
     except Exception as e:
@@ -33,8 +33,10 @@ def send(num,d,message):
         print("Alert Box Handled..")
 
 
-training_data = pd.read_excel(
+td = pd.read_excel(
     "contacts.xlsx", header=None)
-X_train = training_data.as_matrix()
+X_train = td.as_matrix()
+with open('msg.txt', 'r') as myfile:
+  data = myfile.read()
 for val in X_train:
-    send(("91"+str(val)),d,"*We are Done*")
+    send(("91"+str(val)),d,data)
