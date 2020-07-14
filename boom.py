@@ -30,13 +30,13 @@ def send(num,d,message):
         time.sleep(3)
         d.switch_to.alert.accept()
     except NoAlertPresentException:
-        print("Alert Box Handled..")
+       
 
 
 td = pd.read_excel(
     "contacts.xlsx", header=None)
-X_train = td.as_matrix()
+X = td.as_matrix()
 with open('msg.txt', 'r') as myfile:
   data = myfile.read()
-for val in X_train:
+for val in X:
     send(("91"+str(val)),d,data)

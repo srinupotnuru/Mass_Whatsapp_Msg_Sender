@@ -20,4 +20,4 @@ $ pip install numpy
 * Place your message in msg.txt file
 * Now run boom.py file in your editor
 * Scan QR code with your mobile.
-yOyO we are done 🌟⚡️
+yOyO we are done 🌟⚡️ 
